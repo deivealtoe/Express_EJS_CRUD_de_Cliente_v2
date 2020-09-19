@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/index.css'/>
+
+    <title>Trabalho 1</title>
+</head>
+<body>
+    <header>
+        <a href="/">Index</a>
+        <a href="/clientes">Clientes</a>
+    </header>
+
+    <div id="corpo_do_site">
+
+        <h1>Trabalho 1</h1>
+
+        <h2>Desenvolvimento de Sistemas Web</h2>
+
+        <p><b>Data de Entrega:</b> 01/10/20 23:59:59. A cada dia de atraso na entrega o valor máximo do trabalho será reduzido em 2 ponto. Após 5 dias não valerá nota a entrega do trabalho.</p>
+
+        <p><b>Modo de entrega:</b> Envio do código do projeto via E-mail, somente após o aceite em resposta será considerado entregue. E-mail do Professor lucastalves@ucl.br, favor colocar os nomes completos dos alunos no corpo do e-mail. O código deve ser Zipado e colocado no seu “Drive do e-mail UCL”, compartilhado e enviado o link por e-mail.</p>
+
+        <p><u>Lembre-se</u> de não enviar a pasta “node_modules” para que o arquivo fique pequeno!</p>
+
+        <p><b>Tecnologia utilizada:</b> O projeto deve ser desenvolvido utilizando somente os recursos disponíveis pelo node.js e express.js. Não sendo permitido utilização de outros frameworks ou bibliotecas não utilizadas em sala de aula no Back-end. No Front-end pode ser usado qualquer framework ou biblioteca (lembrando que elas devem vir acompanhadas no código enviado).</p>
+
+        <p><b>Componentes do trabalho:</b> O projeto poderá ser construído por 1 ou 2 alunos. Em caso de 2 alunos a nota será aplicada para os dois participantes.</p>
+
+        <h3>Tema e escopo:</h3>
+
+        <p>A primeira entrega do trabalho, consiste em um sistema de cadastro de Cliente.</p>
+
+        <h3>1. Obrigatórios para gravação (requerido):</h3>
+        
+        <ul>
+            <lI>ID (Código interno do cliente)</lI>
+            <lI>Nome</lI>
+            <lI>Sobrenome</lI>
+            <lI>Senha</lI>
+            <lI>E-mail</lI>
+        </ul>
+
+        <h3>2. Não Obrigatórios para gravação mais deve ser possível informar:</h3>
+
+        <ul>
+            <li>Sexo (opções = M – Masculino / F – Feminino)</li>
+            <li>CPF</li>
+            <li>RG</li>
+            <li>Telefone</li>
+            <li>Data de Nascimento (formato = dd/mm/aaaa)</li>
+            <li>Estado Civil (opções = 1-Solteiro / 2-Casado / 3-Divorciado / 4-Viúvo / 5-Separado)</li>
+            <li>CEP (formato = 00000-000)</li>
+            <li>Endereço (campo de texto único)</li>
+        </ul>
+
+        <h3>2. Deve ser possível cadastrar, alterar e excluir registros.</h3>
+        <h3>3. Para ser cadastrado o usuário precisa obrigatoriamente informar os campos obrigatórios (requeridos).</h3>
+        <h3>4. Os campos (Data de Nascimento e CEP) que possuem formatos devem ser validados nos seus formatos específicos.</h3>
+        <h3>5. Os campos (Sexo e Estado Civil) de opções devem armazenar somente o valor e não a descrição</h3>
+        <h3>6. Caso os dados digitados não estejam corretos o sistema deve apresentar os erros de modo que o usuário possa corrigir. Essas validações devem ser feitas no servidor (Back-end)</h3>
+
+        <h3>7. O sistema deve possuir a capacidade de salvar os dados em um arquivo no formato JSON:</h3>
+
+        <p>Exemplo:</p>
+
+        <pre>
+            [
+                {
+                    "Id": 1,
+                    "Nome": "Lucas",
+                    "Sobrenome": "Alves",
+                    "Senha": "123",
+                    "E-mail": "lucastalves@ucl.br",
+                    "Sexo": "M",
+                    "CPF": "12345678910",
+                    "RG": "1355553",
+                    "Telefone": "999999999",
+                    "DataNascimento": "19/03/1984",
+                    "EstadoCivil": 2,
+                    "CEP": "29123456",
+                    "Endereco": "Nome da minha Rua, 100, Serra, ES"
+                },
+                {
+                    "Id": 2,
+                    "Nome": "cliente",
+                    "Sobrenome": "qualquer",
+                    "Senha": "456",
+                    "E-mail": "cliente@ucl.br",
+                    "Sexo": "F",
+                    "CPF": "",
+                    "RG": "",
+                    "Telefone": "987654321",
+                    "DataNascimento": "",
+                    "EstadoCivil": 1,
+                    "CEP": "",
+                    "Endereco": ""
+                }
+            ]
+        </pre>
+
+        <h3>8. Deve exibir uma lista(tabela) com os registros gravados, todo os campos do cliente devem aparecer na tabela.</h3>
+
+        <h2>Sistema de avaliação</h2>
+
+        <p><b>Funcionalidade:</b> Será utilizado como critério de avaliação se efetivamente o sistema está funcionando</p>
+
+        <p><b>Código bem escrito:</b> Será utilizado como critério de avaliação se o código é de fácil leitura e boa redação, bem indentado e com bons nomes para classes e métodos.</p>
+
+    </div>
+</body>
+</html>
