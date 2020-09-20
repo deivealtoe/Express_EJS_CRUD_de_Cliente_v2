@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const pegarRegistrosDeClientes = require('../meus_modulos/pegarRegistrosDeClientes');
 const salvarNovoClienteNoArquivo = require('../meus_modulos/salvarNovoClienteNoArquivo');
-const midValidarCamposRequeridos = require('../middlewares/validarCamposRequeridos');
+const validarCamposRequeridosEFormatos = require('../middlewares/validarCamposRequeridosEFormatos');
 
 
 
@@ -20,14 +20,12 @@ router.get('/cadastro', (request, response, next) => {
 
 
 
-router.post('/adicionar_cliente', midValidarCamposRequeridos, async (request, response, next) => {
+router.post('/adicionar_cliente', validarCamposRequeridosEFormatos, async (request, response, next) => {
     const novo_cliente = request.body;
-
-    // preciso validar esses dados antes de realmente cadastrar - fazendo isso com middleware
 
     await salvarNovoClienteNoArquivo(novo_cliente);
 
-    response.status(200).end();
+    response.status(200).json({ msg: 'Cliente inserido com sucesso!' }).end();
 });
 
 

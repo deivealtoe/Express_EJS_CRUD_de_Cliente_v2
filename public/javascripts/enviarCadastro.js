@@ -31,7 +31,9 @@ async function enviarCadastro() {
         body: JSON.stringify(cadastro)
     });
 
-    console.log(response.status);
+    if (response.status === 200) {
+        
+    }
 
     const responseJson = await response.json();
 
