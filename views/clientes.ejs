@@ -15,8 +15,61 @@
         <a href="/clientes">Clientes</a>
         <a href="/clientes/cadastro">Cadastro</a>
     </header>
+
+    <% if (clientes.length == 0) { %>
+
+        <h1>Não há clientes cadastrados</h1>
+
+    <% } else { %>
     
-    <h1>Clientes</h1>
+        <h1>Clientes</h1>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Email</th>
+                <th>Sexo</th>
+                <th>CPF</th>
+                <th>RG</th>
+                <th>Telefone</th>
+                <th>Data de Nascimento</th>
+                <th>Estado Civil</th>
+                <th>CEP</th>
+                <th>Endereço</th>
+                <th>Editar</th>
+                <th>Deletar</th>
+            </tr>
+            <% clientes.forEach(cadastro => { %>
+                <tr>
+                    <td><%= cadastro.id %></td>
+                    <td><%= cadastro.nome %></td>
+                    <td><%= cadastro.sobrenome %></td>
+                    <td><%= cadastro.email %></td>
+                    <td><%= cadastro.sexo %></td>
+                    <td><%= cadastro.cpf %></td>
+                    <td><%= cadastro.rg %></td>
+                    <td><%= cadastro.telefone %></td>
+                    <td><%= cadastro.data_de_nascimento %></td>
+                    <td><%= cadastro.estado_civil %></td>
+                    <td><%= cadastro.cep %></td>
+                    <td><%= cadastro.endereco %></td>
+                    <td>
+                        <a href="/clientes/cadastro/editar/<%= cadastro.id %>">
+                            <img src="/images/iconfinder_edit.png">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/clientes/deletar_cliente/<%= cadastro.id %>">
+                            <img src="/images/iconfinder_remove.png">
+                        </a>
+                    </td>
+                </tr>
+            <% }); %>
+        </table>
+
+    <% } %>
 
 </body>
 </html>

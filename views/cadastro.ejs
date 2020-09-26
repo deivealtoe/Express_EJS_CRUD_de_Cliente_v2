@@ -21,42 +21,44 @@
 
     <form>
 
-        <label for="id">ID*</label>
-        <input name="id" id="id" type="number" min="0" step="1" required>
+        <% if (!locals.cliente_especifico) { %>
+            <label for="id">ID*</label>
+            <input name="id" id="id" type="number" min="0" step="1" required <% if (locals.cliente_especifico) { %>value="<%= cliente_especifico.id %>"<% } %>>
+        <% } %>
 
         <label for="nome">Nome*</label>
-        <input name="nome" id="nome" type="text" required>
+        <input name="nome" id="nome" type="text" required <% if (locals.cliente_especifico) { %>value="<%= cliente_especifico.nome %>"<% } %>>
 
         <label for="sobrenome">Sobrenome*</label>
-        <input name="sobrenome" id="sobrenome" type="text" required>
+        <input name="sobrenome" id="sobrenome" type="text" required <% if (locals.cliente_especifico) { %>value="<%= cliente_especifico.sobrenome %>"<% } %>>
 
         <label for="senha">Senha*</label>
         <input name="senha" id="senha" type="password" required>
 
         <label for="email">Email*</label>
-        <input name="email" id="email" type="email" required>
+        <input name="email" id="email" type="email" required <% if (locals.cliente_especifico) { %>value="<%= cliente_especifico.email %>"<% } %>>
 
         <label for="sexo">Sexo</label>
-        <select name="sexo" id="sexo">
+        <select name="sexo" id="sexo" <% if (locals.cliente_especifico) { %>value="<%= cliente_especifico.sexo %>"<% } %>>
             <option value="F">Feminino</option>
             <option value="M">Masculino</option>
             <option value="O">Outro</option>
         </select>
 
         <label for="cpf">CPF</label>
-        <input name="cpf" id="cpf" type="text">
+        <input name="cpf" id="cpf" type="text" <% if (locals.cliente_especifico) { %>value="<%= cliente_especifico.cpf %>"<% } %>>
 
         <label for="rg">RG</label>
-        <input name="rg" id="rg" type="text">
+        <input name="rg" id="rg" type="text" <% if (locals.cliente_especifico) { %>value="<%= cliente_especifico.rg %>"<% } %>>
 
         <label for="telefone">Telefone</label>
-        <input name="telefone" id="telefone" type="text">
+        <input name="telefone" id="telefone" type="text" <% if (locals.cliente_especifico) { %>value="<%= cliente_especifico.telefone %>"<% } %>>
 
         <label for="data_de_nascimento">Data de Nascimento</label>
-        <input name="data_de_nascimento" id="data_de_nascimento" type="text">
+        <input name="data_de_nascimento" id="data_de_nascimento" type="text" <% if (locals.cliente_especifico) { %>value="<%= cliente_especifico.data_de_nascimento %>"<% } %>>
  
         <label for="estado_civil">Estado Civil</label>
-        <select name="estado_civil" id="estado_civil">
+        <select name="estado_civil" id="estado_civil" <% if (locals.cliente_especifico) { %>value="<%= cliente_especifico.estado_civil %>"<% } %>>
             <option value="1">Solteiro</option>
             <option value="2">Casado</option>
             <option value="3">Divorciado</option>
@@ -65,18 +67,24 @@
         </select>
 
         <label for="cep">CEP</label>
-        <input name="cep" id="cep" type="text">
+        <input name="cep" id="cep" type="text" <% if (locals.cliente_especifico) { %>value="<%= cliente_especifico.cep %>"<% } %>>
 
         <label for="endereco">Endereço</label>
-        <input name="endereco" id="endereco" type="text">
+        <input name="endereco" id="endereco" type="text" <% if (locals.cliente_especifico) { %>value="<%= cliente_especifico.endereco %>"<% } %>>
 
-        <input type="button" id="cadastrar" value="Cadastrar">
+        <% if (locals.cliente_especifico) { %>
+            <input type="button" id="alterar" value="Alterar">
 
-        <input type="button" id="alterar" value="Alterar">
+            <script src="/javascripts/enviarAlteracoes.js"></script>
+        <% } else { %>
+            <input type="button" id="cadastrar" value="Cadastrar">
+
+            <script src="/javascripts/enviarCadastro.js"></script>
+        <% } %>
 
     </form>
 
-    <script src="/javascripts/enviarCadastro.js"></script>
+    
 
 </body>
 </html>
