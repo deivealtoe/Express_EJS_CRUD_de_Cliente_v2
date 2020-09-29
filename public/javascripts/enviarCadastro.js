@@ -32,7 +32,7 @@ async function enviarCadastro() {
     });
 
     if (response.status === 200) {
-        
+        window.location.href = '/clientes'
     }
 
     const responseJson = await response.json();
