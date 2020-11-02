@@ -21,23 +21,14 @@ function pegarDadosDoFormulario() {
 
 
 async function enviarCadastro() {
-    const cadastro = pegarDadosDoFormulario();
+    try {
+        await axios.post('http://127.0.0.1:3000/clientes/adicionar_cliente', pegarDadosDoFormulario());
 
-    const response = await fetch('http://127.0.0.1:3000/clientes/adicionar_cliente', {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(cadastro)
-    });
-
-    if (response.status === 200) {
-        window.location.href = '/clientes'
+        window.location.href = '/clientes';
+    } catch (err) {
+        console.log(err);
+        alert(err.response.data.msg);
     }
-
-    const responseJson = await response.json();
-
-    alert(responseJson.msg);
 }
 
 

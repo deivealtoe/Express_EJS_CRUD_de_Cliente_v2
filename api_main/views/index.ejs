@@ -19,35 +19,45 @@
 
     <div id="corpo_do_site">
 
-        <h1>Trabalho 1</h1>
+        <h1>Trabalho 2</h1>
 
         <h2>Desenvolvimento de Sistemas Web</h2>
 
-        <p><b>Data de Entrega:</b> 01/10/20 23:59:59. A cada dia de atraso na entrega o valor máximo do trabalho será reduzido em 2 ponto. Após 5 dias não valerá nota a entrega do trabalho.</p>
+        <p><b>Data de Entrega:</b> 12/11/20 23:59:59. A cada dia de atraso na entrega o valor máximo do trabalho será reduzido em 2 pontos. Após 5 dias não valerá nota a entrega do trabalho.</p>
 
         <p><b>Modo de entrega:</b> Envio do código do projeto via E-mail, somente após o aceite em resposta será considerado entregue. E-mail do Professor lucastalves@ucl.br, favor colocar os nomes completos dos alunos no corpo do e-mail. O código deve ser Zipado e colocado no seu “Drive do e-mail UCL”, compartilhado e enviado o link por e-mail.</p>
 
         <p><u>Lembre-se</u> de não enviar a pasta “node_modules” para que o arquivo fique pequeno!</p>
 
-        <p><b>Tecnologia utilizada:</b> O projeto deve ser desenvolvido utilizando somente os recursos disponíveis pelo node.js e express.js. Não sendo permitido utilização de outros frameworks ou bibliotecas não utilizadas em sala de aula no Back-end. No Front-end pode ser usado qualquer framework ou biblioteca (lembrando que elas devem vir acompanhadas no código enviado).</p>
+        <p><b>Tecnologia utilizada:</b> O projeto deve ser desenvolvido utilizando somente os recursos disponíveis pelo node.js, express.js e axios. Não sendo permitido utilização de outros frameworks ou bibliotecas não utilizadas em sala de aula no Back-end. No Front-end pode ser usado qualquer framework ou biblioteca (lembrando que elas devem vir acompanhadas no código enviado).</p>
 
         <p><b>Componentes do trabalho:</b> O projeto poderá ser construído por 1 ou 2 alunos. Em caso de 2 alunos a nota será aplicada para os dois participantes.</p>
 
         <h3>Tema e escopo:</h3>
 
-        <p>A primeira entrega do trabalho, consiste em um sistema de cadastro de Cliente.</p>
+        <p>A segunda entrega do trabalho, consiste em uma melhoria no sistema de cadastro de Cliente do primeiro trabalho. Será separado o Servidor de páginas e da gravação de dados.</p>
 
-        <h3>1. Obrigatórios para gravação (requerido):</h3>
+        <h3>1. Nessa segunda versão deve possuir duas páginas, uma para listagem e outro para cadastro. Os Dados devem ser gravados via acesso de API que será responsável por gravar os dados no arquivo.</h3>
         
+        <h3>2. A página de listagem dos registros gravados deve mostrar todos os campos do cliente, exceto o campo “senha”.</h3>
+
+        <h3>3. Ao clicar em um cliente o sistema deve abrir o cadastro do respectivo cliente passando o id do cliente para a página do cadastro. Deve possuir um botão para incluir um novo cliente no cadastro.</h3>
+
+        <h3>4. A Pagina de cadastro não deve mostrar a listagem, sendo necessário ao gravar na tela de cadastro voltar para página de listagem.</h3>
+
+        <h3>5. Serão observadas as seguintes entradas de informações:</h3>
+
+        <h4>Obrigatórios para gravação (requeridos):</h4>
+
         <ul>
-            <lI>ID (Código interno do cliente)</lI>
-            <lI>Nome</lI>
-            <lI>Sobrenome</lI>
-            <lI>Senha</lI>
-            <lI>E-mail</lI>
+            <li>ID (Código interno do cliente)</li>
+            <li>Nome</li>
+            <li>Sobrenome</li>
+            <li>Senha</li>
+            <li>E-mail</li>
         </ul>
 
-        <h3>2. Não Obrigatórios para gravação mais deve ser possível informar:</h3>
+        <h4>Não Obrigatórios para gravação mas deve ser possível informar:</h4>
 
         <ul>
             <li>Sexo (opções = M – Masculino / F – Feminino)</li>
@@ -60,13 +70,13 @@
             <li>Endereço (campo de texto único)</li>
         </ul>
 
-        <h3>2. Deve ser possível cadastrar, alterar e excluir registros.</h3>
-        <h3>3. Para ser cadastrado o usuário precisa obrigatoriamente informar os campos obrigatórios (requeridos).</h3>
-        <h3>4. Os campos (Data de Nascimento e CEP) que possuem formatos devem ser validados nos seus formatos específicos.</h3>
-        <h3>5. Os campos (Sexo e Estado Civil) de opções devem armazenar somente o valor e não a descrição</h3>
-        <h3>6. Caso os dados digitados não estejam corretos o sistema deve apresentar os erros de modo que o usuário possa corrigir. Essas validações devem ser feitas no servidor (Back-end)</h3>
+        <h3>6. Deve ser possível cadastrar, alterar e excluir registros.</h3>
+        <h3>7. Para ser cadastrado o usuário precisa obrigatoriamente informar os campos obrigatórios (requeridos).</h3>
+        <h3>8. Os campos (Data de Nascimento e CEP) que possuem formatos devem ser validados nos seus formatos específicos.</h3>
+        <h3>9. Os campos (Sexo e Estado Civil) de opções devem armazenar somente o valor e não a descrição.</h3>
+        <h3>10. Caso os dados digitados não estejam corretos o sistema deve apresentar os erros de modo que o usuário possa corrigir. Essas validações devem ser feitas no servidor (Back-end).</h3>
 
-        <h3>7. O sistema deve possuir a capacidade de salvar os dados em um arquivo no formato JSON:</h3>
+        <h3>O sistema deve possuir a capacidade de salvar os dados em um arquivo no formato JSON.</h3>
 
         <p>Exemplo:</p>
 
@@ -105,7 +115,9 @@
             ]
         </pre>
 
-        <h3>8. Deve exibir uma lista(tabela) com os registros gravados, todo os campos do cliente devem aparecer na tabela.</h3>
+        <h3>11. Toda gravação dos dados da página de cadastro deve ser enviada para API de Clientes que deve rodar em outro servidor.</h3>
+
+        <h3>12. A API deve fornecer os as Informações dos Clientes e fornecer os métodos para listar, salvar, alterar e deletar os registros dos clientes</h3>
 
         <h2>Sistema de avaliação</h2>
 

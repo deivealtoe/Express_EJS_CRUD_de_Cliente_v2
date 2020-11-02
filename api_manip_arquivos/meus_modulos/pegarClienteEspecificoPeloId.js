@@ -7,7 +7,18 @@ async function pegarClienteEspecificoPeloId(cliente_id) {
 
     const cliente_especifico = registros.find(elemento => elemento.id == cliente_id);
 
-    return cliente_especifico;
+    if (cliente_especifico) {
+        return {
+            status: 200,
+            msg: "Cliente encontrado",
+            cliente: cliente_especifico
+        }
+    }
+
+    return {
+        status: 404,
+        msg: "Cliente não encontrado"
+    }
 }
 
 

@@ -13,6 +13,15 @@ const gravar_arquivo = util.promisify(fs.writeFile);
 async function adicionarClienteAoArquivo(novo_registro_de_cliente) {
     const registros_de_clientes = await pegarRegistrosDeClientes();
 
+    const cliente_existe = registros_de_clientes.find(element => element.id === novo_registro_de_cliente.id);
+
+    if (cliente_existe) {
+        return {
+            status: 409,
+            msg: "ID já existe"
+        }
+    }
+
     registros_de_clientes.push(novo_registro_de_cliente);
 
     const registros_de_clientes_stringfied = JSON.stringify(registros_de_clientes);
@@ -25,6 +34,11 @@ async function adicionarClienteAoArquivo(novo_registro_de_cliente) {
 
             await adicionarClienteAoArquivo(novo_registro_de_cliente);
         }
+    }
+
+    return {
+        status: 201,
+        msg: "Cliente inserido com sucesso!"
     }
 }
 

@@ -72,10 +72,12 @@
         <% if (locals.cliente_especifico) { %>
             <input type="button" id="alterar" value="Alterar">
 
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
             <script src="/javascripts/enviarAlteracoes.js"></script>
         <% } else { %>
             <input type="button" id="cadastrar" value="Cadastrar">
 
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
             <script src="/javascripts/enviarCadastro.js"></script>
         <% } %>
 
